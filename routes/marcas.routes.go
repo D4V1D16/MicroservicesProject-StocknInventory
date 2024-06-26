@@ -11,8 +11,8 @@ func SetupMarcasRoutes() *mux.Router{
 
 	marcasRoutes.HandleFunc("/marcas",controllers.GetMarcas).Methods("GET")
 	marcasRoutes.HandleFunc("/marcas",controllers.PostMarca).Methods("POST")
-	//marcasRoutes.HandleFunc("/marcas").Methods("DELETE")
-	//marcasRoutes.HandleFunc("/marcas").Methods("PUT")
+	marcasRoutes.HandleFunc("/marcas/{id}",controllers.DeleteMarca).Methods("DELETE")
+	marcasRoutes.HandleFunc("/marcas/{id}",controllers.GetSingleMarca).Methods("GET")
 
 
 	return marcasRoutes
